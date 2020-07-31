@@ -1,0 +1,15 @@
+syntax = "proto3";
+package protocol;
+
+//optimize_for 加快解析的速度
+option optimize_for = SPEED;
+option java_package = "com.ykt.im.socket.protobuf";
+option java_outer_classname = "UserMsgSyncWrap";
+
+message UserMsgSync {
+    string external_userid = 1;     //客户userid
+    string wx_msg_id = 2;           //客户端消息ID
+    int32 msg_type = 3;             //消息类型（0：普通文字消息，1：图片消息，2：收藏，3：语音消息，4：视频消息，5：红包，6：微文档，7：文件消息，8位置，9：个人名片）
+    string msg_content = 4;         //消息内容
+    string wx_msg_time = 5;         //客户端消息时间(格式:2020-06-28 12:24:30)
+}

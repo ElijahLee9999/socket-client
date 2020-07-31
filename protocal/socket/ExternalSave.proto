@@ -1,0 +1,13 @@
+syntax = "proto3";
+package protocol;
+
+//optimize_for 加快解析的速度
+option optimize_for = SPEED;
+option java_package = "com.ykt.im.socket.protobuf";
+option java_outer_classname = "ExternalSaveWrap";
+
+message ExternalSave {
+    string external_userid = 1;     //客户userid
+    bool saved = 2;                 //入库结果
+    string error_msg = 3;           //入库失败的错误信息
+}

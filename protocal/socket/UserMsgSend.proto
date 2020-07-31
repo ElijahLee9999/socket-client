@@ -1,0 +1,14 @@
+syntax = "proto3";
+package protocol;
+
+//optimize_for 加快解析的速度
+option optimize_for = SPEED;
+option java_package = "com.ykt.im.socket.protobuf";
+option java_outer_classname = "UserMsgSendWrap";
+
+message UserMsgSend {
+    string msg_id = 1;              //平台消息ID
+    bool result = 2;                //消息是否发送成功
+    string wx_msg_id = 3;           //客户端消息ID
+    string wx_msg_time = 4;         //客户端消息时间(格式:2020-06-28 12:24:30)
+}

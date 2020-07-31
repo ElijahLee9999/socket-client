@@ -1,0 +1,21 @@
+syntax = "proto3";
+package protocol;
+
+//optimize_for 加快解析的速度
+option optimize_for = SPEED;
+option java_package = "com.ykt.im.socket.protobuf";
+option java_outer_classname = "ExternalInfoWrap";
+
+message ExternalInfo {
+    string external_userid = 1;     //客户userid
+    string name = 2;                //姓名
+    string mobile = 3;              //手机号
+    int32 gender = 4;               //性别,0:未知 1:男 2:女
+    int32 type = 5;                 //类型,0:未知 1:微信用户 2:企业微信用户
+    string avatar = 6;              //客户头像url
+    string position = 7;            //职位
+    string corp_name = 8;           //企业的简称
+    string corp_full_name = 9;      //企业的主体名称
+    string remark = 10;             //备注
+    string tag = 11;                //标签
+}

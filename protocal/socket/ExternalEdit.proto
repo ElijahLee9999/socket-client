@@ -1,0 +1,13 @@
+syntax = "proto3";
+package protocol;
+
+//optimize_for 加快解析的速度
+option optimize_for = SPEED;
+option java_package = "com.ykt.im.socket.protobuf";
+option java_outer_classname = "ExternalEditWrap";
+
+message ExternalEdit {
+    string external_userid = 1;     //客户userid
+    string remark = 2;              //备注
+    string tag = 3;                 //标签
+}

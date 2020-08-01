@@ -31,7 +31,7 @@ public class SocketSender {
         byteBuf.writeShort(len + 2);
         byteBuf.writeShort(protocol.getProto());
         if (null != messageLite) {
-            byteBuf.readBytes(messageLite.toByteArray());
+            byteBuf.writeBytes(messageLite.toByteArray());
         }
 
         channel.writeAndFlush(byteBuf);

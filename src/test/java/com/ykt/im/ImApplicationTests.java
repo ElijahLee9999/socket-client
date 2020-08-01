@@ -130,7 +130,7 @@ class ImApplicationTests {
                     }
                 });
 
-        ChannelFuture channelFuture = bootstrap.connect("127.0.0.1", 38082).sync();
+        ChannelFuture channelFuture = bootstrap.connect("192.168.1.152", 38082).sync();
 
         ByteBuf beat = Unpooled.buffer(4);
         beat.writeShort(2);
